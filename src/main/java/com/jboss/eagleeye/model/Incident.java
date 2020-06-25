@@ -26,4 +26,8 @@ public class Incident extends Audit {
     @JoinColumn(name = "user_id")
     private User user;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "municipal_id")
+    private Municipal municipal;
+
 }

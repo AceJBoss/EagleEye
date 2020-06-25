@@ -1,6 +1,6 @@
 package com.jboss.eagleeye.model;
 
-import com.sun.tools.javac.jvm.Gen;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -31,6 +31,7 @@ public class User extends Audit{
     @JoinColumn(name = "municipal_id")
     private Municipal municipal;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Incident> incidents;
 

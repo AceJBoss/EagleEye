@@ -33,4 +33,8 @@ public class Municipal extends Audit {
     @OneToMany(mappedBy = "municipal", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Agency>agencies;
 
+    @JsonIgnore
+    @OneToMany(mappedBy = "municipal", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Incident> incidents;
+
 }
