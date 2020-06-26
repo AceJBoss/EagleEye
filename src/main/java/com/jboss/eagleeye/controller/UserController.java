@@ -19,8 +19,8 @@ public class UserController {
     private IncidentService incidentService;
 
     @PostMapping("/signup")
-    public ResponseEntity<User>signUp(@RequestBody User user){
-        return new ResponseEntity(userService.registerUser(user), HttpStatus.OK);
+    public User signUp(@RequestBody User user){
+        return userService.registerUser(user);
     }
     @PostMapping("/report-incident")
     public ResponseEntity<Incident>reportIncident(@RequestBody Incident incident){
