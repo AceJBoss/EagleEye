@@ -69,7 +69,7 @@ public class IncidentService {
         if(municipal == null){
             System.out.println("ERROR>>><<<>> " + id);
         }
-        return incidentRepository.findByMunicipalId(id);
+        return incidentRepository.findByMunicipalId(municipal.getId());
     }
 
 }
